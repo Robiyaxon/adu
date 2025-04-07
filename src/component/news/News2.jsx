@@ -46,7 +46,7 @@ const News2 = () => {
 
   return (
     <div className="News_Page">
-      <h1>Yangiliklar</h1>
+      <h2>Yangiliklar</h2>
       {map2}
     </div>
   );

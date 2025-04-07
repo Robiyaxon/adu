@@ -1,0 +1,78 @@
+.snu-numbers-container {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 0 150px 70px 150px;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+.top-numbers p {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.bottom-numbers {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 4px solid #ccc;
+  padding-top: 30px;
+  position: relative; /* Needed to position the animated line */
+}
+
+.bottom-numbers::before {
+  content: '';
+  position: absolute;
+  top: -2px; /* Position it on top of the border */
+  left: 0;
+  width: 0%; /* Start with no width */
+  height: 4px;
+  background-color: #007bff;
+  animation: preciseSlowFillRedLine 20s linear infinite; /* Increased duration for better control */
+}
+
+@keyframes preciseSlowFillRedLine {
+  0% { width: 0%; }
+
+  /* Approaching "Colleges & Schools" */
+  10% { width: 14%; }
+  15% { width: 14%; } /* Pause at "Colleges & Schools" */
+
+  /* Moving towards "Faculty" */
+  25% { width: 38%; }
+  30% { width: 38%; } /* Pause at "Faculty" */
+
+  /* Moving towards "Students" */
+  45% { width: 62%; }
+  50% { width: 62%; } /* Pause at "Students" */
+
+  /* Moving towards "Library Holdings" */
+  65% { width: 87%; }
+  70% { width: 87%; } /* Pause at "Library Holdings" */
+
+  /* Reaching the end */
+  90% { width: 100%; }
+  100% { width: 100%; }
+}
+
+.number-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.number-item strong {
+  font-size: 1.6em;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+.number-item p {
+  color: #777;
+  font-size: 0.9em;
+}

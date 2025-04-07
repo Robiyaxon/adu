@@ -1,8 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 
 .navbar-video-wrapper {
   font-family: Arial, sans-serif;
@@ -62,7 +58,7 @@ h1 {
 
 .nav-item a {
   text-decoration: none;
-  color: black;
+  color: rgb(255, 255, 255);
   font-size: 18px;
   font-weight: bold;
   padding: 10px;
