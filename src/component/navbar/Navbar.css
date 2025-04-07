@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar-video-wrapper {
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Video Background for Navbar only */
+.navbar-wrapper {
+  position: relative;
+}
+
+/* Video for Navbar */
+.video-container {
+  position: absolute; /* Position it relative to the navbar-wrapper */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1; /* Ensure video stays behind the navbar */
+  overflow: hidden;
+}
+h1 {
+  position: relative;
+  z-index: 1; /* Matnni video fonidan ustun qilish */
+  color: white;
+  font-size: 48px;
+  text-align: center;
+  margin-top: 100vh; /* Matnni ekranning pastki qismiga joylashtirish */
+  padding-bottom: 50px; /* Matnni pastga siljitish */
+}
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s;
+  gap: 40px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  display: block;
+  transition: color 0.3s;
+}
+
+/* Logo */
+.logo {
+  height: 60px;
+}
+
+/* Drawer */
+.drawer-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 30px 20px;
+  width: 100%;
+  background: rgba(31, 41, 64, 0.9);
+  color: white;
+  text-align: center;
+  padding: 10px 0 30px 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+
+.drawer {
+  display: inline-block;
+  margin: 0 30px;
+}
+
+.drawer a {
+  display: block;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.drawer a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Hover effects */
+.navbar:hover {
+  background: rgba(31, 41, 64, 0.9);
+}
+
+.navbar:hover .nav-item > a {
+  color: white;
+}
+
+.navbar:hover .drawer-container {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
