@@ -6,10 +6,13 @@ import SnuNumbers from './component/snuNumbers/SnuNumbers';
 function App() {
   return (
     <div>
+      {/* <UtilityBar/> */}
       <Navbar />
       <SnuNumbers/>
 
       <News2/>
+
+      
     </div>
   );
 }

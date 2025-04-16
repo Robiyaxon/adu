@@ -1,55 +1,48 @@
-
-
 .navbar-video-wrapper {
   font-family: Arial, sans-serif;
   overflow: hidden;
 }
 
-/* Video Background for Navbar only */
-.navbar-wrapper {
-  position: relative;
+.hero-section {
+  height: 100vh;
 }
 
-/* Video for Navbar */
-.video-container {
-  position: absolute; /* Position it relative to the navbar-wrapper */
+.hero-section video {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  z-index: -1; /* Ensure video stays behind the navbar */
-  overflow: hidden;
-}
-h1 {
-  position: relative;
-  z-index: 1; /* Matnni video fonidan ustun qilish */
-  font-size: 48px;
-  text-align: center;
-  margin-top: 100vh; /* Matnni ekranning pastki qismiga joylashtirish */
-  padding-bottom: 50px; /* Matnni pastga siljitish */
-}
-.video-container video {
-  width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: -1;
+  position: absolute;
 }
 
 /* Navbar */
 .navbar {
   background: rgba(255, 255, 255, 0.2);
-  padding: 15px 40px;
+padding: 10px 0 ;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s;
-  gap: 40px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+/* 👇 Scroll qilinganda qo‘shiladigan class */
+.navbar.scrolled {
+  background: rgba(31, 41, 64, 0.95); /* To‘qroq fon */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .nav-links {
   display: flex;
-  gap: 30px;
 }
 
 .nav-item {
@@ -61,12 +54,62 @@ h1 {
   color: rgb(255, 255, 255);
   font-size: 18px;
   font-weight: bold;
-  padding: 10px;
+  padding:  0 40px;
   display: block;
   transition: color 0.3s;
 }
+.utility-bar {
+  background-color: transparent;
+  padding: 8px 24px;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #374151;
+}
 
-/* Logo */
+.left-text {
+  font-size: 14px;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 4px 8px;
+  background-color: white;
+}
+
+.search-input {
+  outline: none;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  padding-left: 8px;
+  width: 130px;
+}
+
+.search-icon {
+  color: #6b7280;
+}
+
+.language-selector {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 4px 8px;
+  background-color: white;
+  font-size: 14px;
+}
+
 .logo {
   height: 60px;
 }
@@ -88,6 +131,12 @@ h1 {
   pointer-events: none;
 }
 
+.drawer-container.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 .drawer {
   display: inline-block;
   margin: 0 30px;
@@ -104,19 +153,4 @@ h1 {
 
 .drawer a:hover {
   background: rgba(255, 255, 255, 0.2);
-}
-
-/* Hover effects */
-.navbar:hover {
-  background: rgba(31, 41, 64, 0.9);
-}
-
-.navbar:hover .nav-item > a {
-  color: white;
-}
-
-.navbar:hover .drawer-container {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
 }

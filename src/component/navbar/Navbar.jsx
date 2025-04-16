@@ -1,27 +1,66 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Navbar.css";
 import videoBg from "../../asserts/vid.MP4";
 import logo from "../../asserts/logo.png";
+import { FiSearch } from "react-icons/fi";
 
 const Navbar = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const navbarRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        navbarRef.current.classList.add('scrolled');
+      } else {
+        navbarRef.current.classList.remove('scrolled');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <div className="navbar-wrapper">
-      {/* Video Background */}
-      <div className="video-container">
-        <video autoPlay loop muted>
+    <>
+      {/* Hero Section with Video */}
+      <div className="hero-section">
+        <video autoPlay muted loop playsInline className="video-bg">
           <source src={videoBg} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
 
-      {/* Navbar */}
+      {/* Utility Bar */}
+     
+
+      {/* Main Navbar */}
       <nav
         className="navbar"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        ref={navbarRef}
       >
+         <div className="utility-bar">
+        <div className="left-text"></div>
+
+        <div className="right-section">
+          <div className="search-container">
+            <FiSearch className="search-icon" />
+            <input
+              type="text"
+              placeholder="Search..."
+              className="search-input"
+            />
+          </div>
+
+          <select className="language-selector">
+            <option value="en">EN</option>
+            <option value="uz">UZ</option>
+            <option value="ru">RU</option>
+          </select>
+        </div>
+      </div>
         <div className="nav-links">
           <div className="nav-item"><a href="#">About us</a></div>
           <div className="nav-item"><a href="#">Academics</a></div>
@@ -38,7 +77,6 @@ const Navbar = () => {
           <div className="nav-item"><a href="#">Department and Service</a></div>
         </div>
 
-        {/* Drawer */}
         <div className={`drawer-container ${isHovered ? 'show' : ''}`}>
           <div className="drawer">
             <a href="#">Overview</a>
@@ -65,7 +103,7 @@ const Navbar = () => {
           ))}
         </div>
       </nav>
-    </div>
+    </>
   );
 };
 
