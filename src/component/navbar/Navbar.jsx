@@ -78,6 +78,9 @@ const Navbar = () => {
         </div>
 
         <div className={`drawer-container ${isHovered ? 'show' : ''}`}>
+          <div className="line_1">
+
+          </div>
           <div className="drawer">
             <a href="#">Overview</a>
             <a href="#">Rector's Office</a>
@@ -94,7 +97,13 @@ const Navbar = () => {
             <a href="#">Graduate</a>
             <a href="#">International</a>
           </div>
-          {[...Array(5)].map((_, i) => (
+          <div className="drawer">
+            <a href="#">Undergraduate</a>
+            <a href="#">Graduate</a>
+            <a href="#">International</a>
+          </div>
+          <img src={logo} alt="Logo" className="logo1" />
+          {[...Array(4)].map((_, i) => (
             <div className="drawer" key={i}>
               <a href="#">Housing</a>
               <a href="#">Clubs</a>
