@@ -15,13 +15,13 @@ function SnuNumbers() {
       const now = Date.now() % 20000; // Get the current time within our 20s animation
 
       if (now > 2000 && now < 4000) {
-        setCurrentInfo(<p>Seoul National University has lots of different schools and colleges where you can learn about all sorts of cool things!</p>);
+        setCurrentInfo(<p>Colleges & Schools & Faculties = 8</p>);
       } else if (now > 6000 && now < 8000) {
-        setCurrentInfo(<p>The faculty are the teachers and professors here. They're really smart and help students learn.</p>);
+        setCurrentInfo(<p> Faculties = 635</p>);
       } else if (now > 10000 && now < 12000) {
-        setCurrentInfo(<p>Students are the people who come to SNU to study. There are many students learning different things!</p>);
+        setCurrentInfo(<p>Students = 14 352</p>);
       } else if (now > 14000 && now < 16000) {
-        setCurrentInfo(<p>The library has tons of books and other things you can read and learn from. It's a very big collection!</p>);
+        setCurrentInfo(<p>Library Holdings & Fields of study = 56</p>);
       } else {
         setCurrentInfo(
           <p>Seoul National University has <strong>16</strong> Colleges and <strong>11</strong> Professional Graduate Schools.</p>
@@ -33,23 +33,23 @@ function SnuNumbers() {
 
   return (
     <div className="snu-numbers-container">
-      <h1>SNU BY THE NUMBERS</h1>
+      <h1>ASU BY THE NUMBERS</h1>
       <div className="top-info">{currentInfo}</div>
       <div className="bottom-numbers">
         <div className="number-item">
-          <strong>27</strong>
+          <strong>8</strong>
           <p>Colleges & Schools</p>
         </div>
         <div className="number-item">
-          <strong>6,397</strong>
+          <strong>635</strong>
           <p>Faculty</p>
         </div>
         <div className="number-item">
-          <strong>31,544</strong>
+          <strong>14 352</strong>
           <p>Students</p>
         </div>
         <div className="number-item">
-          <strong>5,477,022</strong>
+          <strong>56</strong>
           <p>Library Holdings</p>
         </div>
       </div>

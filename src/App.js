@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './component/Footer';
 import Navbar from './component/navbar/Navbar';
 import News2 from './component/news/News2';
 import SnuNumbers from './component/snuNumbers/SnuNumbers';
@@ -8,11 +9,11 @@ function App() {
     <div>
       {/* <UtilityBar/> */}
       <Navbar />
-      <SnuNumbers/>
+      <SnuNumbers />
 
-      <News2/>
+      <News2 />
+      <Footer />
 
-      
     </div>
   );
 }
